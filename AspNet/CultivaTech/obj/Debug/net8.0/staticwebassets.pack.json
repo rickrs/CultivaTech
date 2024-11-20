@@ -373,6 +373,38 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\fontawesome\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\font-awesome.css"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\fontawesome\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\fontawesome\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\fontawesome\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\fontawesome\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\fontawesome\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\fontawesome\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\fontawesome\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
       "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
@@ -419,6 +451,30 @@
     {
       "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\toast\\css\\toastr.css",
+      "PackagePath": "staticwebassets\\lib\\toast\\css\\toastr.css"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\toast\\css\\toastr.less",
+      "PackagePath": "staticwebassets\\lib\\toast\\css\\toastr.less"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\toast\\css\\toastr.min.css",
+      "PackagePath": "staticwebassets\\lib\\toast\\css\\toastr.min.css"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\toast\\css\\toastr.scss",
+      "PackagePath": "staticwebassets\\lib\\toast\\css\\toastr.scss"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\toast\\js\\toastr.js",
+      "PackagePath": "staticwebassets\\lib\\toast\\js\\toastr.js"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\lib\\toast\\js\\toastr.min.js",
+      "PackagePath": "staticwebassets\\lib\\toast\\js\\toastr.min.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CultivaTech.Microsoft.AspNetCore.StaticWebAssets.props",
