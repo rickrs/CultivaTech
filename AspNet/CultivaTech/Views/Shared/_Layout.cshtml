@@ -5,81 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CultivaTech</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Custom fonts for this template -->
+    <link href="~/lib/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700,800,900" rel="stylesheet" />
 
-    <!-- Font Awesome CSS (v4.7.0) -->
-    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" />
+    <!-- Custom styles for this template -->
+    <link href="~/lib/css/sb-admin-2.min.css" rel="stylesheet" />
 
-    <!-- Toastr CSS (v2.1.1) -->
+    <!-- Toastr CSS -->
     <link rel="stylesheet" href="~/lib/toast/css/toastr.min.css" />
-
-    <!-- CSS personalizado -->
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CultivaTech</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Login" asp-action="Index">Login</a>
-                        </li>
-                    </ul>
+<body id="page-top">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">CultivaTech</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0" />
+
+            <!-- Dynamic Menu -->
+            @inject IHttpContextAccessor HttpContextAccessor
+            @if (HttpContextAccessor.HttpContext.Session.GetString("UsuarioLogado") != null)
+            {
+                <!-- Admin Menu -->
+                @if (HttpContextAccessor.HttpContext.Session.GetString("TipoUsuario") == "Admin")
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Usuarios" asp-action="Index">
+                            <i class="fas fa-user"></i>
+                            <span>Cadastro de Usuários</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Fornecedores" asp-action="Cadastrar">
+                            <i class="fas fa-truck"></i> Cadastro de Fornecedores
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Produtos" asp-action="Cadastrar">
+                            <i class="fas fa-cubes"></i> Cadastro de Produtos
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Pedidos" asp-action="Index">
+                            <i class="fas fa-list"></i> Meus Pedidos
+                        </a>
+                    </li>
+                }
+
+                <!-- Logout -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Login" asp-action="Logout">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </a>
+                </li>
+            }
+            else
+            {
+                <!-- Login -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Login" asp-action="Index">Login</a>
+                </li>
+            }
+        </ul>
+        <!-- End Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <div class="container-fluid">
+                    @RenderBody()
                 </div>
             </div>
-        </nav>
-    </header>
 
-    <main class="container mt-4">
-        @RenderBody()
-    </main>
-
-    <footer class="bg-light text-center py-3 mt-4 border-top">
-        <div class="container">
-            <small>&copy; 2024 CultivaTech. Todos os direitos reservados.</small>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>&copy; 2024 CultivaTech</span>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
 
-    <!-- jQuery -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Toastr JS (v2.1.1) -->
+    <!-- Scripts -->
+    <script src="~/lib/vendor/jquery/jquery.min.js"></script>
+    <script src="~/lib/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/lib/js/sb-admin-2.min.js"></script>
     <script src="~/lib/toast/js/toastr.min.js"></script>
 
-    <!-- jQuery Validation -->
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-
-    <!-- Exibir mensagens do TempData como Toast -->
+    <!-- Configuração do Toastr -->
     <script>
         $(document).ready(function () {
-        @if (TempData["Mensagem"] != null)
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "timeOut": "5000"
+            };
+
+        @if (TempData.ContainsKey("Mensagem"))
         {
             <text>
-                    toastr.success('@TempData["Mensagem"]');
+                    toastr.success("@TempData["Mensagem"]");
             </text>
         }
-        @if (TempData["Erro"] != null)
+        @if (TempData.ContainsKey("Erro"))
         {
             <text>
-                    toastr.error('@TempData["Erro"]');
+                    toastr.error("@TempData["Erro"]");
             </text>
         }
                 });
     </script>
-
     @RenderSection("Scripts", required: false)
 </body>
 </html>

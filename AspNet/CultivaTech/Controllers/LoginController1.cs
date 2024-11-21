@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CultivaTech.Data; // Namespace para o DbContext
 using System.Linq; // Para métodos de consulta LINQ
+using Microsoft.AspNetCore.Http; // Para gerenciamento de sessões
 
 namespace CultivaTech.Controllers
 {
@@ -29,21 +30,27 @@ namespace CultivaTech.Controllers
 
             if (usuario != null)
             {
+                // Salva o nome do usuário na sessão
+                HttpContext.Session.SetString("UsuarioLogado", usuario.Nome);
+                HttpContext.Session.SetString("TipoUsuario", usuario.Tipo);
+
                 TempData["Mensagem"] = $"Bem-vindo, {usuario.Nome}!";
-                return RedirectToAction("Dashboard");
+                return RedirectToAction("Index", "Dashboard"); // Redireciona para o DashboardController
             }
             else
             {
-                ViewBag.Erro = "E-mail ou senha inválidos.";
-                return View();
+                // Define mensagem de erro no TempData
+                TempData["Erro"] = "E-mail ou senha inválidos.";
+                return View(); // Mantém a View atual
             }
         }
 
-        // Exemplo de uma tela pós-login
-        public IActionResult Dashboard()
+        // Processa o logout
+        public IActionResult Logout()
         {
-            ViewBag.Mensagem = TempData["Mensagem"];
-            return View();
+            HttpContext.Session.Remove("UsuarioLogado");
+            TempData["Mensagem"] = "Você saiu do sistema.";
+            return RedirectToAction("Index");
         }
     }
 }
