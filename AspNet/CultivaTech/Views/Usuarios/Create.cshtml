@@ -1,0 +1,84 @@
+﻿@model CultivaTech.Models.Usuario
+
+@{
+    ViewData["Title"] = "Novo Usuário";
+}
+
+<div class="container-fluid">
+    <!-- Título da Página -->
+    <h1 class="h3 mb-3">Cadastrar Novo Usuário</h1>
+    <a asp-action="Index" class="btn btn-primary mb-3">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+
+    <!-- Formulário de Cadastro -->
+    <div class="card shadow">
+        <div class="card-header">
+            <h5 class="m-0">Preencha as informações abaixo</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="Nome" class="form-label">Nome</label>
+                    <input asp-for="Nome" class="form-control" placeholder="Digite o nome do usuário" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Digite o email do usuário" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Senha" class="form-label">Senha</label>
+                    <input asp-for="Senha" type="password" class="form-control" placeholder="Digite a senha do usuário" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Tipo" class="form-label">Tipo</label>
+                    <select asp-for="Tipo" class="form-control">
+                        <option value="Admin">Admin</option>
+                        <option value="Gestor">Gestor</option>
+                        <option value="Cliente">Cliente</option>
+                    </select>
+                    <span asp-validation-for="Tipo" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i> Salvar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Toastr -->
+    <script src="~/lib/toast/js/toastr.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "timeOut": "5000"
+            };
+
+        @if (TempData.ContainsKey("Mensagem"))
+        {
+            <text>
+                    toastr.success("@TempData["Mensagem"]");
+            </text>
+        }
+
+        @if (TempData.ContainsKey("Erro"))
+        {
+            <text>
+                    toastr.error("@TempData["Erro"]");
+            </text>
+        }
+                });
+    </script>
+}

@@ -1,0 +1,35 @@
+﻿@model CultivaTech.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Detalhes do Fornecedor";
+}
+
+<div class="container-fluid">
+    <!-- Título da Página -->
+    <h1 class="h3 mb-3">Detalhes do Fornecedor</h1>
+    <a asp-action="Index" class="btn btn-primary mb-3">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+
+    <!-- Detalhes do Fornecedor -->
+    <div class="card shadow">
+        <div class="card-header">
+            <h5 class="m-0">Fornecedor: @Model.Nome</h5>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">ID</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3">Nome</dt>
+                <dd class="col-sm-9">@Model.Nome</dd>
+
+                <dt class="col-sm-3">Contato</dt>
+                <dd class="col-sm-9">@Model.Contato</dd>
+
+                <dt class="col-sm-3">Endereço</dt>
+                <dd class="col-sm-9">@Model.Endereco</dd>
+            </dl>
+        </div>
+    </div>
+</div>

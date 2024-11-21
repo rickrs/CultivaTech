@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CultivaTech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87d0b03c75365826bfcd5d5b58c11d16dd9f9547")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+404cf1335ce473a40bd7995e8ab5b18221bcd365")]
 [assembly: System.Reflection.AssemblyProductAttribute("CultivaTech")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CultivaTech")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

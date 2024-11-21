@@ -1,0 +1,50 @@
+﻿@model CultivaTech.Models.Produto
+
+@{
+    ViewData["Title"] = "Cadastrar Produto";
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-3">Cadastrar Novo Produto</h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Informações do Produto</h6>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Nome" class="form-label">Nome</label>
+                    <input asp-for="Nome" class="form-control" placeholder="Digite o nome do produto" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label asp-for="Preco" class="form-label">Preço</label>
+                    <input asp-for="Preco" class="form-control" placeholder="Digite o preço do produto" />
+                    <span asp-validation-for="Preco" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label asp-for="QuantidadeEmEstoque" class="form-label">Quantidade em Estoque</label>
+                    <input asp-for="QuantidadeEmEstoque" class="form-control" placeholder="Digite a quantidade em estoque" />
+                    <span asp-validation-for="QuantidadeEmEstoque" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label asp-for="fotoProduto" class="form-label">Foto do Produto</label>
+                    <input asp-for="fotoProduto" type="file" class="form-control" />
+                    
+                </div>
+
+                <button type="submit" class="btn btn-success mt-4">
+                    <i class="fas fa-save"></i> Salvar Produto
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

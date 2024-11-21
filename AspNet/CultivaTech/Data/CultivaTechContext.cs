@@ -11,5 +11,7 @@ namespace CultivaTech.Data // Certifique-se de que o namespace está correto
 
         // Mapeia o modelo Usuario para a tabela de usuários no banco
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Fornecedor> Fornecedores { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
     }
 }

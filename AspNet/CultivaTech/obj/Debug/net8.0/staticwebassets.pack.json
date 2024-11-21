@@ -7897,6 +7897,30 @@
       "PackagePath": "staticwebassets\\lib\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\uploads\\Captura de tela 2023-08-03 114110_jtkxw12l.png",
+      "PackagePath": "staticwebassets\\uploads\\Captura de tela 2023-08-03 114110_jtkxw12l.png"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\uploads\\Screenshot 2024-06-23 195827_2yxkt142.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-06-23 195827_2yxkt142.png"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\uploads\\Screenshot 2024-06-23 195827_bl2bonvr.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-06-23 195827_bl2bonvr.png"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\uploads\\Screenshot 2024-06-23 195827_jj3w0umi.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-06-23 195827_jj3w0umi.png"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\uploads\\Screenshot 2024-06-23 195827_l4rubjzb.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-06-23 195827_l4rubjzb.png"
+    },
+    {
+      "Id": "C:\\trabalho\\projetosc\\pim\\CultivaTech\\AspNet\\CultivaTech\\wwwroot\\uploads\\semfoto.jpg",
+      "PackagePath": "staticwebassets\\uploads\\semfoto.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CultivaTech.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

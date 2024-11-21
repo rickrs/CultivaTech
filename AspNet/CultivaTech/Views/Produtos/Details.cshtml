@@ -1,0 +1,45 @@
+﻿@model CultivaTech.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-3">Detalhes do Produto</h1>
+    <a asp-action="Index" class="btn btn-primary mb-3">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Informações do Produto</h6>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">ID</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3">Nome</dt>
+                <dd class="col-sm-9">@Model.Nome</dd>
+
+                <dt class="col-sm-3">Preço</dt>
+                <dd class="col-sm-9">@Model.Preco</dd>
+
+                <dt class="col-sm-3">Quantidade em Estoque</dt>
+                <dd class="col-sm-9">@Model.QuantidadeEmEstoque</dd>
+
+                <dt class="col-sm-3">Foto</dt>
+                <dd class="col-sm-9">
+                    @if (!string.IsNullOrEmpty(Model.fotoProduto))
+                    {
+                        <img src="~/uploads/@Model.fotoProduto" alt="Foto do Produto" style="width: 200px; height: auto;" />
+                    }
+                    else
+                    {
+                        <span>Sem Foto</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
