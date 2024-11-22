@@ -25,8 +25,13 @@
                     <tr>
                         <td>@item.Produto.Nome</td>
                         <td>@item.Quantidade</td>
-                        <td>@item.Produto.Preco</td>
-                        <td>@(item.Produto.Preco * item.Quantidade).ToString("C")</td>
+                        <td>@item.Produto.Preco.ToString("C2", new System.Globalization.CultureInfo("pt-BR"))</td>
+                        @{
+                            var total = (item.Produto.Preco) * (item.Quantidade);
+                        }
+                        <td>@total.ToString("C2", new System.Globalization.CultureInfo("pt-BR"))</td>
+
+                       
                         <td>
                             <form asp-action="Remover" method="post">
                                 <input type="hidden" name="itemCarrinhoId" value="@item.Id" />
@@ -37,8 +42,17 @@
                 }
             </tbody>
         </table>
-    }
 
-    <a asp-controller="Home" asp-action="Dashboard" class="btn btn-primary">Continuar Comprando</a>
-    
+        <div class="d-flex justify-content-between mt-4">
+            <a asp-controller="Home" asp-action="Dashboard" class="btn btn-primary">
+                Continuar Comprando
+            </a>
+
+            <form asp-action="ResumoCompra" method="get">
+                <button type="submit" class="btn btn-success">
+                    Finalizar Compra
+                </button>
+            </form>
+        </div>
+    }
 </div>

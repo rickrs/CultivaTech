@@ -1,0 +1,53 @@
+﻿@model CultivaTech.Models.Pedido
+
+<div class="container mt-4">
+    <h1>Confirmação da Compra</h1>
+
+    <p class="lead">Obrigado por finalizar sua compra! Aqui estão os detalhes do seu pedido:</p>
+
+    <div class="card mt-4">
+        <div class="card-header bg-primary text-white">
+            <h4>Resumo do Pedido</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Número do Pedido:</strong> @Model.Id</p>
+            <p><strong>Data:</strong> @Model.Data.ToString("dd/MM/yyyy HH:mm")</p>
+            <p><strong>Status:</strong> @Model.Status</p>
+        </div>
+    </div>
+
+    <h4 class="mt-4">Itens do Pedido</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Itens)
+            {
+                <tr>
+                    <td>@item.Produto.Nome</td>
+                    <td>@item.Quantidade</td>
+                    <td>@item.Produto.Preco.ToString("C2", new System.Globalization.CultureInfo("pt-BR"))</td>
+                    @{
+                        var total = (item.Produto.Preco) * (item.Quantidade);
+                    }
+                    <td>@total.ToString("C2", new System.Globalization.CultureInfo("pt-BR"))</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="alert alert-success mt-4">
+        <strong>Total do Pedido:</strong> @Model.Itens.Sum(i => i.Quantidade * i.Produto.Preco).ToString("C")
+    </div>
+
+    <div class="mt-4">
+        <a href="@Url.Action("Dashboard", "Home")" class="btn btn-primary">Voltar à Loja</a>
+    </div>
+</div>

@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\trabalho\projetosc\pim\CultivaTech\AspNet\CultivaTech
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Carrinho/ConfirmacaoCompra.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cQ29uZmlybWFjYW9Db21wcmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Carrinho/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

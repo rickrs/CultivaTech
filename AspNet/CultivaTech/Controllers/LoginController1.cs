@@ -34,7 +34,8 @@ namespace CultivaTech.Controllers
                 HttpContext.Session.SetString("UsuarioLogado", usuario.Nome);
                 HttpContext.Session.SetString("TipoUsuario", usuario.Tipo);
                 HttpContext.Session.SetInt32("UsuarioId", usuario.Id);
-
+                TempData["TipoUsuario"] = usuario.Tipo;
+                TempData.Keep("TipoUsuario");
 
                 TempData["Mensagem"] = $"Bem-vindo, {usuario.Nome}!";
 

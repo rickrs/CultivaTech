@@ -66,32 +66,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    <!-- Toastr -->
-    <script src="~/lib/toast/js/toastr.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            toastr.options = {
-                "closeButton": true,
-                "progressBar": true,
-                "positionClass": "toast-top-right",
-                "timeOut": "5000"
-            };
-
-        @if (TempData.ContainsKey("Mensagem"))
-        {
-            <text>
-                    toastr.success("@TempData["Mensagem"]");
-            </text>
-        }
-
-        @if (TempData.ContainsKey("Erro"))
-        {
-            <text>
-                    toastr.error("@TempData["Erro"]");
-            </text>
-        }
-                });
-    </script>
-}
