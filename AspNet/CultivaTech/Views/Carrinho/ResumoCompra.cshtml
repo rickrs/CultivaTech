@@ -1,0 +1,36 @@
+﻿@model CultivaTech.Models.Pedido
+
+<div class="container mt-4">
+    <h1 class="h3 mb-3">Resumo da Compra</h1>
+
+    <p>Pedido Número: <strong>@Model.Id</strong></p>
+    <p>Data: <strong>@Model.Data.ToString("dd/MM/yyyy HH:mm")</strong></p>
+    <p>Status: <strong>@Model.Status</strong></p>
+
+    <h3>Itens do Pedido</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Itens)
+            {
+                <tr>
+                    <td>@item.Produto.Nome</td>
+                    <td>@item.Quantidade</td>
+                    <td>R$ @item.Preco.ToString("F2")</td>
+                    <td>R$ @(item.Preco * item.Quantidade).ToString("F2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4>Total Geral: R$ @Model.Itens.Sum(i => i.Preco * i.Quantidade).ToString("F2")</h4>
+
+    <a asp-action="Index" asp-controller="Home" class="btn btn-primary">Continuar Comprando</a>
+</div>

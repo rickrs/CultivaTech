@@ -13,5 +13,11 @@ namespace CultivaTech.Data // Certifique-se de que o namespace está correto
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<ItemPedido> ItensPedido { get; set; }
+        public DbSet<Carrinho> Carrinhos { get; set; }
+        public DbSet<ItemCarrinho> ItensCarrinho { get; set; }
+
+
     }
 }

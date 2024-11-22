@@ -30,25 +30,39 @@ namespace CultivaTech.Controllers
 
             if (usuario != null)
             {
-                // Salva o nome do usuário na sessão
+                // Salva o nome e tipo do usuário na sessão
                 HttpContext.Session.SetString("UsuarioLogado", usuario.Nome);
                 HttpContext.Session.SetString("TipoUsuario", usuario.Tipo);
+                HttpContext.Session.SetInt32("UsuarioId", usuario.Id);
+
 
                 TempData["Mensagem"] = $"Bem-vindo, {usuario.Nome}!";
-                return RedirectToAction("Index", "Dashboard"); // Redireciona para o DashboardController
+
+                // Redireciona para o Dashboard com base no tipo de usuário
+                if (usuario.Tipo == "Admin")
+                {
+                    return RedirectToAction("Index", "Dashboard"); // Redireciona para a página de Admin
+                }
+                else if (usuario.Tipo == "Cliente")
+                {
+                    return RedirectToAction("Dashboard", "Home");
+                }
             }
             else
             {
                 // Define mensagem de erro no TempData
                 TempData["Erro"] = "E-mail ou senha inválidos.";
-                return View(); // Mantém a View atual
             }
+
+            // Se não encontrou o usuário, ou se houve um erro de login, retorna para a página de login com mensagem de erro
+            return View();
         }
 
         // Processa o logout
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("UsuarioLogado");
+            HttpContext.Session.Remove("TipoUsuario");
             TempData["Mensagem"] = "Você saiu do sistema.";
             return RedirectToAction("Index");
         }

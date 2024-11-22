@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CultivaTech.Models.Produto>
+
+@{
+    ViewData["Title"] = "Loja Virtual - Dashboard";
+}
+
+<div class="container mt-4">
+    <h1 class="h3 mb-3">Bem-vindo à Loja Virtual</h1>
+
+    <div class="row">
+        @foreach (var produto in Model)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="~/uploads/@produto.fotoProduto" class="card-img-top" alt="Foto do Produto">
+                    <div class="card-body">
+                        <h5 class="card-title">@produto.Nome</h5>
+                        <p class="card-text">Preço: R$ @produto.Preco</p>
+                        <p class="card-text">Estoque: @produto.QuantidadeEmEstoque</p>
+                        <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
+                            <input type="hidden" name="produto_id" value="@produto.Id" />
+                            <input type="hidden" name="quantidade" value="1" />
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

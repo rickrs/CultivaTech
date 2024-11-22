@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CultivaTech.Models.Pedido>
+
+<div class="container">
+    <h1 class="mt-4">Meus Pedidos</h1>
+
+    @if (!Model.Any())
+    {
+        <p class="text-muted">Você ainda não fez nenhum pedido.</p>
+    }
+    else
+    {
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Número do Pedido</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pedido in Model)
+                {
+                    <tr>
+                        <td>@pedido.Numero</td>
+                        <td>@pedido.Data.ToShortDateString()</td>
+                        <td>@pedido.Status</td>
+                        <td>
+                            @(pedido.Itens.Sum(i => i.Quantidade * i.Produto.Preco).ToString("C"))
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

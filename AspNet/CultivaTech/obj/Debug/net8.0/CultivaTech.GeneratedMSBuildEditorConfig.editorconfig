@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\trabalho\projetosc\pim\CultivaTech\AspNet\CultivaTech
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Carrinho/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Carrinho/ResumoCompra.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cUmVzdW1vQ29tcHJhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Pedidos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/trabalho/projetosc/pim/CultivaTech/AspNet/CultivaTech/Views/Produtos/Create.cshtml]
